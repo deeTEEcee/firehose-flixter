@@ -17,7 +17,7 @@
         <a class="navbar-brand" href="#">Flixter</a>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">See all Courses</a>
+            <%= link_to 'See All Courses', courses_path %>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -30,14 +30,14 @@
         </ul>
       </nav>
     </div>
-    
+
     <%= yield %>
 
     <div id="footer">
       <div class="container">
-        <b>Footer Here</b>
+        <b>Teachers</b>
         <br />
-        <%= link_to 'Link', '#' %>
+        <%= link_to 'Teach a Course', new_instructor_course_path %>
       </div>
     </div>
   </body>
