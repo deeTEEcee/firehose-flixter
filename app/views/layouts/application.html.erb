@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="http://vjs.zencdn.net/5.12.6/video-js.css" rel="stylesheet">
   </head>
 
   <body>
@@ -23,7 +24,7 @@
         <ul class="navbar-nav">
           <% if current_user %>
           <li>
-            <%= link_to 'Logout', destroy_user_session_path, class: 'nav-link' %>
+            <%= link_to 'Logout', destroy_user_session_path, class: 'nav-link', method: :delete %>
           </li>
           <% else %>
           <li class="nav-item">
@@ -37,6 +38,7 @@
       </nav>
     </div>
 
+    <%= flash_messages %>
     <%= yield %>
 
     <div id="footer">
@@ -46,5 +48,13 @@
         <%= link_to 'Teach a Course', new_instructor_course_path %>
       </div>
     </div>
+    <script src="http://vjs.zencdn.net/5.12.6/video.js"></script>
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <script type="text/javascript">
+      // a crappy way to hide the alert
+      $(".alert").fadeTo(2000, 500).slideUp(500, function(){
+        $(".alert").alert('close');
+      });
+    </script>
   </body>
 </html>
