@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.web_console.whitelisted_ips = '10.0.2.2'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -7,7 +8,7 @@ Rails.application.configure do
   config.cache_classes = false
   config.reload_classes_only_on_change = false
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  
+  config.enable_processing = true
   # Do not eager load code on boot.
   config.eager_load = false
 
